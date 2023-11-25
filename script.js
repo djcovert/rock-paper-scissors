@@ -17,8 +17,6 @@ function getComputerChoice() {
     } else {
         computerChoice = "scissors";
     }
-
-    console.log("The computer chose " + computerChoice);
     return computerChoice;
 }
 
@@ -26,15 +24,11 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let input = prompt("Please enter your move (rock, paper or scissors)");
     playerChoice = input.toLowerCase();
-    console.log("You chose " + playerChoice);
     return playerChoice;
 }
 
 // Play round and return result of round
 function playRound(computerChoice, playerChoice) {
-    getComputerChoice();
-    getPlayerChoice();
-    
     if (computerChoice == "scissors" && playerChoice == "rock") {
         playerScore++;
         console.log("You win!");
@@ -63,13 +57,31 @@ function playRound(computerChoice, playerChoice) {
 }
 
 function game() {
-    playRound(computerChoice, playerChoice);
-    console.log("Your score is " + playerScore);
-    console.log("The computers score is " + computerScore);
+    getPlayerChoice();
+    console.log("You chose " + playerChoice);
+
+    getComputerChoice();
+    console.log("The computer chose " + computerChoice);
 
     playRound(computerChoice, playerChoice);
     console.log("Your score is " + playerScore);
     console.log("The computers score is " + computerScore);
+
+    getPlayerChoice();
+    console.log("You chose " + playerChoice);
+
+    getComputerChoice();
+    console.log("The computer chose " + computerChoice);
+
+    playRound(computerChoice, playerChoice);
+    console.log("Your score is " + playerScore);
+    console.log("The computers score is " + computerScore);
+
+    getPlayerChoice();
+    console.log("You chose " + playerChoice);
+
+    getComputerChoice();
+    console.log("The computer chose " + computerChoice);
 
     playRound(computerChoice, playerChoice);
     console.log("Your score is " + playerScore);
