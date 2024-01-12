@@ -13,20 +13,29 @@ const scissors = document.querySelector("#scissors");
 // LISTENERS
 rock.addEventListener('click', () => {
     let playerChoice = "rock";
+
     getComputerChoice();
     playRound(computerChoice, playerChoice);
+    displayPlayerChoice.textContent = "You chose " + playerChoice;
+    displayComputerChoice.textContent = "The computer chose " + computerChoice;
 });
 
 paper.addEventListener('click', () => {
-    let playerChoice = "rock";
+    let playerChoice = "paper";
+
     getComputerChoice();
     playRound(computerChoice, playerChoice);
+    displayPlayerChoice.textContent = "You chose " + playerChoice;
+    displayComputerChoice.textContent = "The computer chose " + computerChoice;
 });
 
 scissors.addEventListener('click', () => {
-    let playerChoice = "rock";
+    let playerChoice = "scissors";
+
     getComputerChoice();
     playRound(computerChoice, playerChoice);
+    displayPlayerChoice.textContent = "You chose " + playerChoice;
+    displayComputerChoice.textContent = "The computer chose " + computerChoice;
 });
 
 // FUNCTIONS
@@ -58,28 +67,28 @@ function getComputerChoice() {
 function playRound(computerChoice, playerChoice) {
     if (computerChoice == "scissors" && playerChoice == "rock") {
         playerScore++;
-        result.textContent = "You win!";
+        roundResult.textContent = "You win!";
     } else if (computerChoice == "rock" && playerChoice == "rock") {
-        result.textContent = "Draw";
+        roundResult.textContent = "Draw.";
     } else if (computerChoice == "paper" && playerChoice == "rock") {
         computerScore++;
-        result.textContent = "You lose.";
+        roundResult.textContent = "You lose.";
     } else if (computerChoice == "scissors" && playerChoice == "paper") {
         computerScore++;
-        result.textContent = "You lose.";
+        roundResult.textContent = "You lose.";
     } else if (computerChoice == "rock" && playerChoice == "paper") {
         playerScore++;
-        result.textContent = "You win!";
+        roundResult.textContent = "You win!";
     } else if (computerChoice == "paper" && playerChoice == "paper") {
-        result.textContent = "Draw";
+        roundResult.textContent = "Draw.";
     } else if (computerChoice == "scissors" && playerChoice == "scissors") {
-        result.textContent = "Draw";
+        roundResult.textContent = "Draw.";
     } else if (computerChoice == "rock" && playerChoice == "scissors") {
         computerScore++;
-        result.textContent = "You lose.";
+        roundResult.textContent = "You lose.";
     } else if (computerChoice == "paper" && playerChoice == "scissors") {
         playerScore++;
-        result.textContent = "You win!";
+        roundResult.textContent = "You win!";
     }
 }
 
