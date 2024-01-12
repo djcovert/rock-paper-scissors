@@ -5,6 +5,29 @@ let playerChoice = "";
 let playerScore = 0;
 let computerScore = 0;
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+
+rock.addEventListener('click', () => {
+    let playerChoice = "rock";
+    getComputerChoice();
+    playRound(computerChoice, playerChoice);
+});
+
+paper.addEventListener('click', () => {
+    let playerChoice = "rock";
+    getComputerChoice();
+    playRound(computerChoice, playerChoice);
+});
+
+scissors.addEventListener('click', () => {
+    let playerChoice = "rock";
+    getComputerChoice();
+    playRound(computerChoice, playerChoice);
+});
+
 // FUNCTIONS
 // Computer generates choice
 function getComputerChoice() {
@@ -21,11 +44,11 @@ function getComputerChoice() {
 }
 
 // Player enters choice
-function getPlayerChoice() {
-    let input = prompt("Please enter your move (rock, paper or scissors)");
-    playerChoice = input.toLowerCase();
-    return playerChoice;
-}
+// function getPlayerChoice() {
+//     let input = prompt("Please enter your move (rock, paper or scissors)");
+//     playerChoice = input.toLowerCase();
+//     return playerChoice;
+// }
 
 // Play round and return result of round
 function playRound(computerChoice, playerChoice) {
@@ -57,26 +80,6 @@ function playRound(computerChoice, playerChoice) {
 }
 
 function game() {
-    getPlayerChoice();
-    console.log("You chose " + playerChoice);
-
-    getComputerChoice();
-    console.log("The computer chose " + computerChoice);
-
-    playRound(computerChoice, playerChoice);
-    console.log("Your score is " + playerScore);
-    console.log("The computers score is " + computerScore);
-
-    getPlayerChoice();
-    console.log("You chose " + playerChoice);
-
-    getComputerChoice();
-    console.log("The computer chose " + computerChoice);
-
-    playRound(computerChoice, playerChoice);
-    console.log("Your score is " + playerScore);
-    console.log("The computers score is " + computerScore);
-
     getPlayerChoice();
     console.log("You chose " + playerChoice);
 
