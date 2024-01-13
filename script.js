@@ -13,29 +13,26 @@ const scissors = document.querySelector("#scissors");
 // LISTENERS
 rock.addEventListener('click', () => {
     let playerChoice = "rock";
-
+    displayPlayerChoice.textContent = "You chose " + playerChoice;
     getComputerChoice();
     playRound(computerChoice, playerChoice);
-    displayPlayerChoice.textContent = "You chose " + playerChoice;
-    displayComputerChoice.textContent = "The computer chose " + computerChoice;
+    updateScore();
 });
 
 paper.addEventListener('click', () => {
     let playerChoice = "paper";
-
+    displayPlayerChoice.textContent = "You chose " + playerChoice;
     getComputerChoice();
     playRound(computerChoice, playerChoice);
-    displayPlayerChoice.textContent = "You chose " + playerChoice;
-    displayComputerChoice.textContent = "The computer chose " + computerChoice;
+    updateScore();
 });
 
 scissors.addEventListener('click', () => {
     let playerChoice = "scissors";
-
+    displayPlayerChoice.textContent = "You chose " + playerChoice;
     getComputerChoice();
     playRound(computerChoice, playerChoice);
-    displayPlayerChoice.textContent = "You chose " + playerChoice;
-    displayComputerChoice.textContent = "The computer chose " + computerChoice;
+    updateScore();
 });
 
 // FUNCTIONS
@@ -50,7 +47,13 @@ function getComputerChoice() {
     } else {
         computerChoice = "scissors";
     }
+    displayComputerChoice.textContent = "The computer chose " + computerChoice;
     return computerChoice;
+}
+
+function updateScore() {
+    displayPlayerScore.textContent = playerScore;
+    displayComputerScore.textContent = computerScore;
 }
 
 // Display round result
@@ -90,7 +93,13 @@ function playRound(computerChoice, playerChoice) {
         playerScore++;
         roundResult.textContent = "You win!";
     }
-}
+    
+    if (playerScore == 3) {
+        roundResult.textContent = "You win best of three!";
+    } else if (computerScore == 3) {
+        roundResult.textContent = "Computer wins best of three.";
+    }
+};
 
 function game() {
     getPlayerChoice();
@@ -113,4 +122,4 @@ function game() {
 }
 
 // RUN
-game();
+updateScore();
