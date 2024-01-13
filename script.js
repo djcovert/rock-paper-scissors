@@ -9,6 +9,7 @@ let computerScore = 0;
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const restart = document.querySelector("#restart");
 
 // LISTENERS
 rock.addEventListener('click', () => {
@@ -34,6 +35,16 @@ scissors.addEventListener('click', () => {
     playRound(computerChoice, playerChoice);
     updateScore();
 });
+
+restart.addEventListener('click', () => {
+    computerScore = 0;
+    playerScore = 0;
+    displayPlayerChoice.textContent = "";
+    displayComputerChoice.textContent = "";
+    roundResult.textContent = "Choose your option";
+    updateScore();
+});
+
 
 // FUNCTIONS
 // Computer generates choice

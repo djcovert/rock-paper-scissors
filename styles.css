@@ -86,12 +86,22 @@ body {
   font-size: 20px;
 }
 
-#roundResult {
+#center {
   display: flex;
+  flex-direction: column;
   width: 20%;
   justify-content: center;
   align-items: center;
+  gap: 16px;
+}
+
+#roundResult {
+  display: flex;
   font-weight: bold;
+}
+
+#restart {
+  width: fit-content;
 }
 
 #displayComputerScore {
