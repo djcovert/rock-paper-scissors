@@ -112,25 +112,25 @@ function playRound(computerChoice, playerChoice) {
     }
 };
 
-function game() {
-    getPlayerChoice();
-    console.log("You chose " + playerChoice);
+// function game() {
+//     getPlayerChoice();
+//     console.log("You chose " + playerChoice);
 
-    getComputerChoice();
-    console.log("The computer chose " + computerChoice);
+//     getComputerChoice();
+//     console.log("The computer chose " + computerChoice);
 
-    playRound(computerChoice, playerChoice);
-    console.log("Your score is " + playerScore);
-    console.log("The computers score is " + computerScore);
+//     playRound(computerChoice, playerChoice);
+//     console.log("Your score is " + playerScore);
+//     console.log("The computers score is " + computerScore);
 
-    if (playerScore > computerScore) {
-        console.log("You win the best of three!");
-    } else if (playerScore < computerScore){
-        console.log("Computer wins the best of three!");
-    } else {
-        console.log("Draw for the best of three!");
-    }
-}
+//     if (playerScore > computerScore) {
+//         console.log("You win the best of three!");
+//     } else if (playerScore < computerScore){
+//         console.log("Computer wins the best of three!");
+//     } else {
+//         console.log("Draw for the best of three!");
+//     }
+// }
 
 // RUN
 updateScore();
